@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<title>Feelgood</title>
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.css" />
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.5.2.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.js"></script>
+<script type="text/javascript"
+      src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDtJmwx_fzCqq5XcQZQxpWnmxCdZUEV1Ec&sensor=true">
+    </script>
+    <script type="text/javascript">
+  var sthlm = new google.maps.LatLng(59.34495090, 18.07519960);
+
+  var address = [
+  "Täby+rehab+center+kemistvägen+1+täby+sweden",
+  "Feelgood+grev+turegatan+34+stockholm+sweden",
+  "Friskispraktiken+adolf+fredriks+kyrkogata+2+stockholm+sweden",
+  "Hedman+&+Malmén+riddargatan+12+stockholm+sweden",
+  "Hela+kroppen+kapellgränd+13+stockholm+sweden",
+  ];
+
+
+	  
+function initialize() {
+	var useragent = navigator.userAgent;
+	var mapdiv = document.getElementById("map_canvas");
+		
+		if (useragent.indexOf('iPhone') != -1 || useragent.indexOf('Android') != -1 ) {
+    		mapdiv.style.width = '100%';
+   			mapdiv.style.height = '100%';
+  		} else {
+    			mapdiv.style.width = '600px';
+    			mapdiv.style.height = '800px';
+  		  }//else
+		
+	var myOptions = {
+		zoom: 10,
+		center: sthlm,
+		mapTypeId: google.maps.MapTypeId.ROADMAP
+	};
+    	map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+		
+		geocoda(map,address);
+		
+		
+	}//initialize
+	
+	
+	function geocoda(map,address){
+		geocoder = new google.maps.Geocoder();
+		
+		for (var i = 0; i < address.length; i++){
+		geocoder.geocode({ 'address': address[i]}, function(results){
+		
+		neighborhoodsPos[i] = results[0].geometry.location;
+		
+		
+		})
+		}//for-loop
+		  var neighborhoods = [
+  ['Täby Rehab Center', neighborhoodsPos[0], 4],
+  ['Feelgood', neighborhoodsPos[1], 5],
+  ['Friskispraktiken', neighborhoodsPos[2], 3],
+  ['Hedman & Malmén', neighborhoodsPos[3], 2],
+  ['Hela kroppen', neighborhoodsPos[4], 1]
+  ];
+  setMarkers(map, neighborhoods);
+		}//geocoda
+
+	
+	function setMarkers(map, locations) {
+
+  for (var i = 0; i < locations.length; i++) {
+    var beach = locations[i];
+    var myLatLng = new google.maps.LatLng(beach[1], beach[2]);
+    var marker = new google.maps.Marker({
+        position: myLatLng,
+        map: map,
+        title: beach[0],
+        zIndex: beach[3]
+    });
+  }
+}
+		
+
+		
+			
+		
+			
+      
+	  	
+    </script>
+<link href="css/styles.css" rel="stylesheet" type="text/css">
+</head>
+
+<body onLoad="initialize()">
+<div data-role="page" id="kontakt" data-theme="d">
+  <div data-role="header">
+    <h1>Karta</h1>
+  </div>
+  <div data-role="content" data-theme="d">
+      <div id="map_canvas"></div>
+      
+  </div>
+</div><!-- /page -->
+
+</body>
+</html>

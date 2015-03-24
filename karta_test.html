@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<title>Kontaktuppgifter</title>
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.css" />
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.5.2.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.js"></script>
+<script type="text/javascript"
+      src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDtJmwx_fzCqq5XcQZQxpWnmxCdZUEV1Ec&sensor=true">
+    </script>
+    <script type="text/javascript">
+      function initialize() {
+		var useragent = navigator.userAgent;
+		var mapdiv = document.getElementById("map_canvas");
+		
+		if (useragent.indexOf('iPhone') != -1 || useragent.indexOf('Android') != -1 ) {
+    mapdiv.style.width = '100%';
+    mapdiv.style.height = '100%';
+  } else {
+    mapdiv.style.width = '600px';
+    mapdiv.style.height = '800px';
+  }
+		
+		var myLatlng = new google.maps.LatLng(59.34495090, 18.07519960);
+        var myOptions = {
+          center: new google.maps.LatLng(59.34495090, 18.07519960),
+          zoom: 13,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        var map = new google.maps.Map(document.getElementById("map_canvas"),
+            myOptions);
+		var marker = new google.maps.Marker({
+      		position: myLatlng,
+     		map: map,
+      		title:"Capio Artro Clinic"
+ 			});
+			
+      }
+	  	
+    </script>
+<link href="css/styles.css" rel="stylesheet" type="text/css">
+</head>
+
+<body onLoad="initialize()">
+<div data-role="page" id="kontakt" data-theme="d">
+  <div data-role="header">
+    <h1>Kontaktuppgifter</h1>
+  </div>
+  <div data-role="content" data-theme="d">
+      <div id="map_canvas"></div>
+      
+  </div>
+</div><!-- /page -->
+
+</body>
+</html>

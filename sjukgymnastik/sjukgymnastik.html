@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Sjukgymnastik</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.css" />
+<link href="css/styles.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.5.2.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.js"></script>
+
+<script src="jquery.js" type="text/javascript"></script>
+<script src="jquery.mousewheel.js" type="text/javascript"></script>
+<script src="jquery.ulslide.js" type="text/javascript"></script>
+<link href="css/styles.css" rel="stylesheet" type="text/css">
+<script type="text/javascript">
+$(function() {
+    $('#slide1').ulslide({
+        effect: {
+            type: 'slide', // slide or fade
+            axis: 'x',     // x, y
+            distance: 40   // Distance between frames
+        },
+        duration: 500,
+        autoslide: false,
+        width: 443,
+        height: 300,
+        mousewheel: true,
+        nextButton: '#e1_next',
+        prevButton: '#e1_prev'
+    });
+});
+</script>
+</head>
+
+<body>
+<div data-role="page" id="sjg" data-theme="d">
+
+	<div data-role="header" data-position="fixed">
+		<h1>Sjukgymnastik</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+    	<div class="logo"><img src="img/logo2.png"></div>
+        	<ul data-role="listview" data-inset="true">
+      			<li><a href="listsjg.html">Lista sjukgymnastiker</a></li>
+      			<li><a href="hemovningar.html">Hemövningar</a></li>
+    		</ul>	
+	</div><!-- /content -->
+    
+    <div data-role="footer" data-position="fixed" data-id="myfooter">
+	<div data-role="navbar" data-theme="b">
+		<ul>
+			<li><a href="index.html" data-icon="home" data-iconpos="top">Start</a></li>
+			<li><a href="info.html" data-icon="info" data-iconpos="top">Info</a></li>
+            <li><a href="sjukgymnastik.html" class="ui-btn-active" data-icon="plus" data-iconpos="top">Sjukgymnastik</a></li>
+		</ul>
+	</div><!-- /navbar -->
+</div><!-- /footer -->
+
+</div><!-- /page -->
+
+
+<div data-role="page" id="ovn1" data-theme="d">
+
+	<div data-role="header">
+		<h1>Övning 1</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+        <p></p>
+        <ul id="slide1">
+    <li> <img src="img/logo2.png" alt="" /></li>
+    <li> <img src="img/logo_artroclinic-1.png" alt="" /></li>
+</ul>
+<a href="#" id="e1_prev"> Föregående </a>
+<a href="#" id="e1_next"> Nästa </a>
+
+	</div><!-- /content -->
+
+</div><!-- /page -->
+
+
+</body>
+</html>

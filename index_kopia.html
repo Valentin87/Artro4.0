@@ -1,0 +1,369 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Artro Online</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.css" />
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.5.2.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.js"></script>
+<link href="css/styles.css" rel="stylesheet" type="text/css">
+</head>
+
+ 
+
+
+<body>
+
+<div data-role="page" data-theme="d">
+
+	<div data-role="header" data-position="fixed">
+		<h1>Start</h1>
+        <!---<a href="#nopassw" data-role="button" class="ui-btn-left">		Beställ lösenord</a>
+    	<a href="#login" data-role="button" class="ui-btn-right" data-theme="b">Logga in</a>-->
+	</div><!-- /header -->
+
+	<div data-role="content">	
+    	<div class="logo"><img src="img/logo2.png"></div>
+        <!--<h5>Logga in för fler alternativ</h5>-->
+        	<ul data-role="listview" data-inset="true">
+            	<li><a href="#checklist"><h2>Checklista </h2>
+                <p>Inför operation/artroskopi</p></a></li>
+      			<!-- <li><a href="#sistaM">Boka sista minuten</a></li> -->
+    		</ul>	
+	</div><!-- /content -->
+    
+    <div data-role="footer" data-position="fixed" data-id="myfooter">
+	<div data-role="navbar" data-theme="b">
+		<ul>
+			<li><a href="index.html" class="ui-btn-active" data-icon="home" data-iconpos="top">Start</a></li>
+			<li><a href="info.html" data-icon="info" data-iconpos="top">Info</a></li>
+            <li><a href="sjukgymnastik.html" data-icon="plus" data-iconpos="top">Sjukgymnastik</a></li>
+		</ul>
+	</div><!-- /navbar -->
+</div><!-- /footer -->
+
+</div><!-- /page -->
+
+
+<div data-role="page" id="checklist" data-theme="d">
+
+	<div data-role="header">
+		<h1>Checklista</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+    	<div class="logo"><img src="img/logo2.png"></div>
+        <!-- <label for="numberinput"><h5>Personnummer:</h5></label> -->
+   		<input type="number" placeholder="Personnummer ÅÅMMDD-XXXX" name="numberinput" id="numberinput" value=""/>
+        <h5></h5>
+        <a href="checkbrief" data-role="button" data-icon="arrow-r" data-iconpos="right" data-theme="b" data-inline="false">Start</a>
+        <!-- Jämför inmatat pers.nr. efter fält för operation/kallelsetyp. if kallelse finns så kör detta (typ)(taget från artro Online "Besvara Enkät":
+        
+        <form method="post" id="besvenk" action="testacenk0"><table width="80%">
+<tr><td colspan=3><h3>Besvara enkät</h3></td></tr>
+<tr><td>Personnummer</td><td>
+<INPUT id="pnr" NAME="pnr" TYPE="text" VALUE="" SIZE=12 LENGTH=12 class="{validate:{required:true, messages:{required:'Fyll i ditt personnummer'}}}" autocomplete="off"  ></TD><TD>&Aring;&Aring;MMDD-XXXX.</TD></TR><TR><TR><TD></TD><TD><input type="hidden" name="sok" value="sok" /><INPUT NAME=Sok TYPE='submit' VALUE='S&ouml;k' class="button medium"></TD></TR></TABLE></FORM> -->
+        
+	</div><!-- /content -->
+
+</div><!-- /page -->
+
+<div data-role="page" id="checkbrief" data-theme="d">
+
+	<div data-role="header">
+		<h1>Checklista</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+    	<div class="logo"><img src="img/logo2.png"></div>
+        <h3>Viktiga förberedelser:</h3>
+        <p>Köpa Descutan® (bakteriedödande tvål) som finns att köpa på Apoteket.</p>
+        <a href="checkstart" data-role="button" data-icon="arrow-r" data-iconpos="right" data-theme="b" data-inline="false">Start</a>
+       
+        
+	</div><!-- /content -->
+
+</div><!-- /page -->
+
+
+
+<div data-role="page" id="checkstart" data-theme="d">
+
+	<div data-role="header">
+		<h1>Checklista</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+    	<div class="logo"><img src="img/logo2.png"></div>
+        <p><!-- hämta namn från pnr om det fanns operation/kallelse -->TOLVAN TOLVANSSON 121212-1212</p>
+        <p><b>Det är mycket viktigt</b> att du noga läser igenom vad som står och vid minsta tveksamhet så ring vår mottagning!
+        <p>Operationen riskerar annars att bli inställd.</p>
+        <a href="#tidochdatum" data-role="button" data-icon="arrow-r" data-iconpos="right" data-inline="false">Jag bekräftar</a>
+       
+        
+	</div><!-- /content -->
+
+</div><!-- /page -->
+
+
+<div data-role="page" id="tidochdatum" data-theme="d">
+
+	<div data-role="header">
+		<h1>Checklista</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+    	<div class="logo"><img src="img/logo2.png"></div>
+        <p>TOLVAN TOLVANSSON 121212-1212</p>
+        <p>Har du kontrollerat tid och datum på kallelsen?</p>
+        <a href="#kopdescutan" data-role="button" data-icon="arrow-r" data-iconpos="right" data-inline="false">Jag bekräftar tid och datum</a>
+       
+        
+	</div><!-- /content -->
+
+</div><!-- /page -->
+
+
+<div data-role="page" id="kopdescutan" data-theme="d">
+
+	<div data-role="header">
+		<h1>Checklista</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+    	<div class="logo"><img src="img/logo2.png"></div>
+        <p>TOLVAN TOLVANSSON 121212-1212</p>
+        <p>Har du köpt Descutan® (bakteriedödande tvål)? Tvålen finns att köpa på Apoteket.</p>
+        <a href="#finne" data-role="button" data-icon="arrow-r" data-iconpos="right" data-inline="false">Jag har köpt Descutan®</a>
+        <p>Tveksam/frågor, ring:</p>
+        <a href="tel://084062658" data-role="button" data-theme="b">Ring Mottagning</a>
+        
+       
+        
+	</div><!-- /content -->
+
+</div><!-- /page -->
+
+
+<div data-role="page" id="finne" data-theme="d">
+
+	<div data-role="header">
+		<h1>Checklista</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+    	<div class="logo"><img src="img/logo2.png"></div>
+        <p>TOLVAN TOLVANSSON 121212-1212</p>
+        <p>Se noga till att du <b>inte</b> har något sår, finne, plita
+etc. på eller runt operationsområdet.</p>
+        <a href="#infektion" data-role="button" data-icon="arrow-r" data-iconpos="right" data-inline="false">Jag har kontrollerat</a>
+        <p>Tveksam/frågor, ring:</p>
+        <a href="tel://084062658" data-role="button" data-theme="b">Ring Mottagning</a>
+       
+        
+	</div><!-- /content -->
+
+</div><!-- /page -->
+
+
+<div data-role="page" id="infektion" data-theme="d">
+
+	<div data-role="header">
+		<h1>Checklista</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+    	<div class="logo"><img src="img/logo2.png"></div>
+        <p>TOLVAN TOLVANSSON 121212-1212</p>
+        <p>Du får <b>inte</b> ha någon pågående infektion, inte heller
+feber, halsont eller förkylning.</p>
+        <a href="#raka" data-role="button" data-icon="arrow-r" data-iconpos="right" data-inline="false">Jag har ingen infektion</a>
+        <p>Tveksam/frågor, ring:</p>
+        <a href="tel://084062658" data-role="button" data-theme="b">Ring Mottagning</a>
+       
+        
+	</div><!-- /content -->
+
+</div><!-- /page -->
+
+
+<div data-role="page" id="raka" data-theme="d">
+
+	<div data-role="header">
+		<h1>Checklista</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+    	<div class="logo"><img src="img/logo2.png"></div>
+        <p>TOLVAN TOLVANSSON 121212-1212</p>
+        <p>Du får <b>inte</b> raka huden på eller runt operationsområdet.</p>
+        <a href="#mat" data-role="button" data-icon="arrow-r" data-iconpos="right" data-inline="false">Jag har inte rakat området</a>
+        <p>Tveksam/frågor, ring:</p>
+        <a href="tel://084062658" data-role="button" data-theme="b">Ring Mottagning</a>
+       
+        
+	</div><!-- /content -->
+
+</div><!-- /page -->
+
+
+<div data-role="page" id="mat" data-theme="d">
+
+	<div data-role="header">
+		<h1>Checklista</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+    	<div class="logo"><img src="img/logo2.png"></div>
+        <p>TOLVAN TOLVANSSON 121212-1212</p>
+        <p>Du får <b>inte</b> äta 6 timmar innan du kommer hit, men du får
+dricka klara drycker (ej mjölk) fram till 3 timmar före
+ankomst.</p>
+        <a href="#tvattadescutan" data-role="button" data-icon="arrow-r" data-iconpos="right" data-inline="false">Jag bekräftar</a>
+        <p>Tveksam/frågor, ring:</p>
+        <a href="tel://084062658" data-role="button" data-theme="b">Ring Mottagning</a>
+       
+        
+	</div><!-- /content -->
+
+</div><!-- /page -->
+
+<div data-role="page" id="tvattadescutan" data-theme="d">
+
+	<div data-role="header">
+		<h1>Checklista</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+    	<div class="logo"><img src="img/logo2.png"></div>
+        <p>TOLVAN TOLVANSSON 121212-1212</p>
+        <p>Duscha och tvätta håret med Descutan® en gång kvällen före, samt en gång på operationsdagens morgon.</p>
+        <a href="#bil" data-role="button" data-icon="arrow-r" data-iconpos="right" data-inline="false">Jag intygar</a>
+        <p>Tveksam/frågor, ring:</p>
+        <a href="tel://084062658" data-role="button" data-theme="b">Ring Mottagning</a>
+        
+       
+        
+	</div><!-- /content -->
+
+</div><!-- /page -->
+
+<div data-role="page" id="bil" data-theme="d">
+
+	<div data-role="header">
+		<h1>Checklista</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+    	<div class="logo"><img src="img/logo2.png"></div>
+        <p>TOLVAN TOLVANSSON 121212-1212</p>
+        <p><b>Lämna smycken (gäller även piercing) samt bilen hemma!</b> Ordna gärna så att du blir hämtad av
+någon anhörig. I annat fall kan vi hjälpa till med att beställa
+taxi.</p>
+		<p><b>Förbered dig på att det kan bli väntetid</b> så ta gärna med något att läsa.</p>
+        <a href="#checkfinish" data-role="button" data-icon="check" data-iconpos="right" data-inline="false" data-theme="b"><h3>Jag bekräftar</h3></a>
+       
+        
+	</div><!-- /content -->
+
+</div><!-- /page -->
+
+
+<div data-role="page" id="checkfinish" data-theme="d">
+
+	<div data-role="header" data-backbtn="false">
+		<h1>Checklista</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+    	<div class="logo"><img src="img/logo2.png"></div>
+        <p><b>Tack för din bekräftelse!</b></p>
+        <p>Mer information om ingreppen finns att läsa nedan. Denna information kan även nås via fliken Info på startsidan.</p>
+        <a href="al.html" data-role="button" data-icon="info" data-iconpos="right" data-inline="false">Artroskopi i lokalbedövning</a>
+        <a href="op.html" data-role="button" data-icon="info" data-iconpos="right" data-inline="false">Operation i narkos</a>
+        <a href="index.html" data-role="button" data-icon="check" data-iconpos="right" data-inline="false" data-theme="b">Avsluta</a>
+       
+        
+	</div><!-- /content -->
+
+</div><!-- /page -->
+
+
+<div data-role="page" id="login" data-theme="d">
+
+	<div data-role="header">
+		<h1>Logga in</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+		<div class="logo"><img src="img/logo2.png"></div>
+        	<div data-role="fieldcontain">
+   			 <label for="numberinput"><h5>Personnummer:</h5></label>
+   			 <input type="number" name="numberinput" id="numberinput" value=""/>
+    		<label for="passwordinput"><h5>Lösenord:</h5></label>
+    		<input type="password" name="passwordinput" id="passwordinput" value=""/>
+      		<label for="selectmenu" class="select" data-inline="true"><h5>Logga in som:</h5></label>
+      		<select name="selectmenu" id="selectmenu">
+        	<option value="option1">Patient</option>
+      		</select>
+     		
+    <a href="#mypage" data-role="button" data-inline="true" data-theme="b">Logga in</a> 
+     <a href="#nopassw" data-role="button" data-inline="true">Beställ lösenord</a>
+     		
+    	</div>	<!-- /fieldcontain -->
+	</div><!-- /content -->
+</div><!-- /page -->
+
+
+
+
+
+<div data-role="page" id="mypage" data-theme="d">
+
+	<div data-role="header">
+    	<a href="index.html" data-icon="delete">Logga ut</a>
+		<h1>Inloggad</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+		<ul data-role="listview" data-inset="true">
+      		<li><a href="#minaR">Mina remisser</a> </li>
+      		<li><a href="#enkater">Enkäter</a> </li>
+      		<li><a href="#map">Hitta hit</a></li>
+      		<li><a href="#contact">Kontaktuppgifter</a></li>
+    	</ul>
+    	<div data-role="collapsible-set">
+    		<div data-role="collapsible" data-theme="b">
+				<h3>Mobiltelefon</h3>
+        		<p>Viktigt om du vill ha SMS-påminnelser mm.</p>
+      				<div data-role="fieldcontain">
+        			<label for="textinput2"></label>Telefonnummer:
+        			<input type="tel" name="textinput2" id="telnr" value="07"  />
+      				</div>
+      
+    		</div><!-- /collabsible -->
+    		<div data-role="collapsible" data-collapsed="true" data-theme="b">
+      			<h3>Mailadress</h3>
+      			<p>Viktigt för snabb kontakt via email.</p>
+      			<div data-role="fieldcontain">
+        		<label for="textinput">Email:</label>
+        		<input type="email" name="textinput" id="email" value=""  />
+      			</div>
+			</div><!-- /collabsible -->
+ 		 </div>	<!-- /collabsible SET-->
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Inloggad som 121212-1212</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+
+
+
+
+
+
+</body>
+</html>

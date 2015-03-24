@@ -1,0 +1,27 @@
+@charset "utf-8";
+.logo {
+	text-align: center;
+	padding: 10px;
+}
+.thumbnail {
+	padding: 2px;
+	float: right;
+	margin-top: 5px;
+	margin-right: 0px;
+	margin-bottom: 15px;
+	margin-left: 5px;
+	border: 2px solid #FFF;
+}
+.addr {
+	overflow: hidden;
+	position: relative;
+}
+.details {
+	margin-top: 10px;
+	margin-right: 0px;
+	margin-bottom: 10px;
+	margin-left: 0px;
+}
+.brodtext {
+	font-size: 10px;
+}
